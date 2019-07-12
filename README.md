@@ -6,12 +6,14 @@ sessionconnectevent---->sessionconnectedevent---->sessionsubscribeevent</br>
 2.反向流程(可能直接关闭连接,所有的订阅自动关闭)</br>
 sessionunsubscribeevent---->sessiondisconnectevent</br>
 3.使用步骤</br>
-@Component</br>
-public class ConnectedEventListener implements ApplicationListener<SessionConnectedEvent> {</br>
-    @Override</br>
-    public void onApplicationEvent(SessionConnectedEvent sessionConnectedEvent) {</br>
-        System.out.println("sessionConnectedEvent");</br>
-    }</br>
-}</br>
+```
+@Component
+public class ConnectedEventListener implements ApplicationListener<SessionConnectedEvent> {
+    @Override
+    public void onApplicationEvent(SessionConnectedEvent sessionConnectedEvent) {
+        System.out.println("sessionConnectedEvent");
+    }
+}
+```
 #增加拦截器</br>
 

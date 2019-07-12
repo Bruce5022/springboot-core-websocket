@@ -1,5 +1,5 @@
 # 最初简单的websocket 例子
-# 增加监听器
+# 一.增加监听器
 websocket提供了很多event事件,有:</br>
 1.正向流程</br>
 sessionconnectevent---->sessionconnectedevent---->sessionsubscribeevent</br>
@@ -15,5 +15,5 @@ public class ConnectedEventListener implements ApplicationListener<SessionConnec
     }
 }
 ```
-# 增加拦截器</br>
+# 二.增加拦截器</br>
 

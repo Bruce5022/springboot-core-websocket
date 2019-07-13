@@ -49,6 +49,7 @@ ChannelInterceptor
 	}
 ```
 3.结论(连接发送一条消息):</br>
+在postSend中实现不同状态的监控,因为关闭连接,建立连接,发送数据都会走的方法
 ```
 ---------------beforeHandshake start---------------
 beforeHandshake sessionid:392D85EB219CBF8B12CC5400B9763F38

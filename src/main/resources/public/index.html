@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
     <title>Hello WebSocket</title>
     <script src="/jquery.min.js"></script>
@@ -9,32 +9,20 @@
     <script src="/app.js"></script>
 </head>
 <body>
-<div id="main-content" class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="connect">建立连接:</label>
-                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
-                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table id="conversation" class="table table-striped">
-                <thead>
-                <tr>
-                    <th>消息内容</th>
-                </tr>
-                </thead>
-                <tbody id="notice">
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+<form>
+    <label for="connect">建立连接:</label>
+    <button id="connect" type="submit">Connect</button>
+    <button id="disconnect" type="submit" disabled="disabled">Disconnect
+    </button>
+</form>
+<table id="conversation">
+    <thead>
+    <tr>
+        <th>消息内容</th>
+    </tr>
+    </thead>
+    <tbody id="notice">
+    </tbody>
+</table>
 </body>
 </html>

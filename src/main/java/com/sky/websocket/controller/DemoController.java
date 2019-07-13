@@ -31,7 +31,7 @@ public class DemoController {
         messagingTemplate.convertAndSend("/chat/demo_chat", new OutMessage(message.getContent()));
     }
 
-//    @Scheduled(fixedRate=5000)
+    @Scheduled(fixedRate=5000)
     public void autoSend() {
         messagingTemplate.convertAndSend("/chat/demo_chat", new OutMessage("-----hello------"));
     }

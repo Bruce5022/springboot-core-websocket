@@ -17,7 +17,7 @@ public class HttpHandShakeInteceptor implements HandshakeInterceptor {
             ServletServerHttpRequest servletServerHttpRequest = (ServletServerHttpRequest) request;
             String sessionId = servletServerHttpRequest.getServletRequest().getSession().getId();
             System.out.println("beforeHandshake sessionid:" + sessionId);
-            attributes.put("sessionIdFirst",sessionId);
+            attributes.put("sessionId",sessionId);
         }
         System.out.println("---------------beforeHandshake end---------------");
         return true;

@@ -19,6 +19,7 @@ public class ConnectedEventListener implements ApplicationListener<SessionConnec
     }
 }
 ```
+
 # 二.增加handshake拦截器
 1.拦截器是在建立websocket连接前的确认逻辑,实现下面接口:</br>
 ```
@@ -29,8 +30,14 @@ HandshakeInterceptor
 registry.addEndpoint("/endpoint-websocket").addInterceptors(new HttpHandlerShakeInteceptor()).setAllowedOrigins("*").withSockJS();
 ```
 3.结论:</br>
-websocket可以获取到http协议的sessionid,也就是ws的session和http的session是同一个;</br>
-先走拦截器,再走其它事件,可以在其它事件中,获取拦截器放置的属性;</br>
+>websocket可以获取到http协议的sessionid;</br>
+```
+websocket客户端sessionid：wlskigzl
+http客户端sessionid：82206F70CA843F206948FEA86FDB8622
+```
+>websocket也有一个sessionId;</br>
+>先走拦截器,再走其它事件,可以在其它事件中,获取拦截器放置的属性;</br>
+
 # 三.增加channel拦截器
 1.channel拦截器是实现channel监控的,实现下面接口:</br>
 ```

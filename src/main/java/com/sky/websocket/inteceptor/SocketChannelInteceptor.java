@@ -1,5 +1,7 @@
 package com.sky.websocket.inteceptor;
 
+import com.sky.websocket.service.StatusService;
+import com.sky.websocket.service.impl.StatusServiceImpl;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.ChannelInterceptor;
@@ -8,6 +10,8 @@ import org.springframework.messaging.support.ChannelInterceptor;
  * 功能描述:频道拦截器,类似管道,可以获取消息的一些meta数据
  */
 public class SocketChannelInteceptor implements ChannelInterceptor {
+
+    private static StatusService statusService = new StatusServiceImpl();
 
     // 在消息被实际发送到频道之前调用
     @Override
@@ -19,6 +23,7 @@ public class SocketChannelInteceptor implements ChannelInterceptor {
     // 发送消息调用后,立即调用
     @Override
     public void postSend(Message<?> message, MessageChannel channel, boolean sent) {
+        statusService.statusProcess(message, channel);
         System.out.println("-->Channel postSend");
     }
 

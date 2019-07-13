@@ -27,10 +27,11 @@ public class DemoController {
 
     @MessageMapping("/sky/chat")
     public void demo(InMessage message) {
+        System.out.println(this);
         messagingTemplate.convertAndSend("/chat/demo_chat", new OutMessage(message.getContent()));
     }
 
-    @Scheduled(fixedRate=5000)
+//    @Scheduled(fixedRate=5000)
     public void autoSend() {
         messagingTemplate.convertAndSend("/chat/demo_chat", new OutMessage("-----hello------"));
     }

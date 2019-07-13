@@ -1,5 +1,6 @@
 package com.sky.websocket.config;
 
+import com.sky.websocket.inteceptor.HttpHandShakeInteceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -19,7 +20,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 	 * withSockJS  表示开始sockejs支持
 	 */
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/endpoint-websocket").setAllowedOrigins("*").withSockJS();
+		registry.addEndpoint("/endpoint-websocket").addInterceptors(new HttpHandShakeInteceptor()).setAllowedOrigins("*").withSockJS();
 	}
 
 	/**

@@ -3,11 +3,11 @@
 websocket提供了很多event事件,有:</br>
 1.正向流程:</br>
 ```
-sessionconnectevent---->sessionconnectedevent---->sessionsubscribeevent</br>
+sessionconnectevent---->sessionconnectedevent---->sessionsubscribeevent
 ```
 2.反向流程(可能直接关闭连接,所有的订阅自动关闭):</br>
 ```
-sessionunsubscribeevent---->sessiondisconnectevent</br>
+sessionunsubscribeevent---->sessiondisconnectevent
 ```
 3.使用步骤:</br>
 ```

@@ -19,7 +19,7 @@ public class DemoEnvConfig implements EnvironmentPostProcessor, CommandLineRunne
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(environment.getProperty("rcm"));
+        System.out.println(environment.getProperty("medicalrecord"));
     }
 
     @Override
@@ -27,6 +27,9 @@ public class DemoEnvConfig implements EnvironmentPostProcessor, CommandLineRunne
         MutablePropertySources propertySources = environment.getPropertySources();
         Properties properties = new Properties();
         properties.setProperty("rcm","rcm/");
+        properties.setProperty("warehouse","warehouse/");
+        properties.setProperty("medicalrecord","thc-medical-record/");
+        properties.setProperty("cunion","cunion/");
         propertySources.addLast(new PropertiesPropertySource("szwfile",properties));
     }
 }
